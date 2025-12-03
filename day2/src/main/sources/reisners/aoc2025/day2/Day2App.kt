@@ -1,5 +1,7 @@
 package reisners.aoc2025.day2
 
+import reisners.aoc2025.common.readInputFile
+
 data class IdRange(val min: Long, val max: Long) {
 
     companion object {
@@ -23,13 +25,4 @@ fun main() {
     val sum = parsed.sumOf { it.invalidIdsContained.sum() }
 
     println(sum)
-}
-
-fun readInputFile(inputFileName: String): List<String> {
-    return Thread.currentThread()
-        .contextClassLoader
-        .getResourceAsStream(inputFileName)
-        ?.bufferedReader()
-        ?.use { it.readLines() }
-        ?: throw IllegalStateException("Could not read input.txt from classpath")
 }

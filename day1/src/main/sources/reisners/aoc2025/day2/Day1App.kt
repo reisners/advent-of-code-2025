@@ -1,5 +1,7 @@
 package reisners.aoc2025.day2
 
+import reisners.aoc2025.common.readInputFile
+
 fun main() {
     val inputFileName = "input.txt"
     val input = readInputFile(inputFileName)
@@ -16,13 +18,4 @@ fun main() {
 
     println("Positions: $positions")
     println(result)
-}
-
-fun readInputFile(inputFileName: String): List<String> {
-    return Thread.currentThread()
-        .contextClassLoader
-        .getResourceAsStream(inputFileName)
-        ?.bufferedReader()
-        ?.use { it.readLines() }
-        ?: throw IllegalStateException("Could not read input.txt from classpath")
 }
